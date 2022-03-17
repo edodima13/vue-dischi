@@ -20,6 +20,8 @@ export default {
 
 main{
     background-color: #1B2735;
+    display: flex;
+    justify-content: center;
 }
 
 

@@ -1,8 +1,14 @@
 <template>
 <div class="container" >
     <div v-for="(album, index) in albums" :key="index" class="card">
-        <img :src="album.poster" alt="">
-        {{album.title}}
+        <div>
+            <img :src="album.poster" alt="">
+        </div>
+        <div class="descriptions">
+            <p class="title">{{album.title}}</p>
+            <p>{{album.author}}</p>
+            <p>{{album.year}}</p>
+        </div>        
     </div>
 </div>
    
@@ -33,22 +39,37 @@ export default {
 </script>
 
 <style scoped>
-div{
-    color: black;
-}
 .card{
+    color: white;
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
+    padding: 20px;
+    background-color: #303B46;
+    width: calc(100% / 6);
 }
 .container{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 100px;
 }
 .container img{
-    width: 200px;
+    width: 150px;
     display: block;
     height: 100%;
+    padding-bottom: 10px;
 }
+.descriptions p{
+    color: #616B75;
+}
+.descriptions .title{
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: white;
+}
+
 
 </style>
